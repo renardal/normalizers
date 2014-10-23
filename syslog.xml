@@ -86,11 +86,9 @@
                         <localized_desc language="fr">l'horodatage du log par le démon syslog</localized_desc>
                     </description>
                     <substitute>DATE</substitute>
-		    <!--
                     <callbacks>
                         <callback>MMM dd hh:mm:ss</callback>
                     </callbacks>
-		    -->
                 </tag>
                 <tag name="hostname" tagType="syslogHostname">
                     <description>

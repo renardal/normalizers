@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE normalizer SYSTEM "normalizer.dtd">
 <normalizer name="network"
-            version="0.99"
+            version="1.0"
             unicode="yes"
             ignorecase="yes"
             matchtype="match"
-            appliedTo="raw"
-	    expandWhitespaces="yes" 
-            taxonomy="access control">
+            appliedTo="raw">
     <description>
         <localized_desc language="en">
             This normalizer parses log messages related to network events
@@ -51,6 +49,14 @@
                 </tag>
             </tags>
         </pattern>
+        <pattern name="simple_interface">
+            <text>.*INTERFACE.*</text>
+            <tags>
+                <tag name="intf" tagType="INTERFACE">
+                    <substitute>INTERFACE</substitute>
+                </tag>
+            </tags>
+        </pattern> 
         <pattern name="ip_address">
             <text>.*IP.*</text>
             <tags>
