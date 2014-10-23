@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE normalizer SYSTEM "normalizer.dtd">
+<normalizer name="network"
+            version="0.99"
+            unicode="yes"
+            ignorecase="yes"
+            matchtype="match"
+            appliedTo="raw"
+	    expandWhitespaces="yes" 
+            taxonomy="access control">
+    <description>
+        <localized_desc language="en">
+            This normalizer parses log messages related to network events
+        </localized_desc>
+    </description>
+    <authors>
+        <author>alexandre@cumulusnetworks.com</author>
+    </authors>
+    <patterns>
+        <pattern name="interface_link_up">
+            <text>HEADER bonding: BOND: link status definitely up for interface INTERFACE, BLABLA</text>
+            <tags>
+                <tag name="header" tagType="Anything">
+                    <substitute>HEADER</substitute>
+                </tag>
+                <tag name="bond" tagType="Anything">
+                    <substitute>BOND</substitute>
+                </tag>
+                <tag name="intf" tagType="Anything">
+                    <substitute>INTERFACE</substitute>
+                </tag>
+                <tag name="message" tagType="Anything">
+                    <substitute>BLABLA</substitute>
+                </tag>
+            </tags>
+        </pattern>
+         <pattern name="interface_link_down">
+            <text>HEADER bonding: BOND: link status definitely down for interface INTERFACE, BLABLA</text>
+            <tags>
+                <tag name="header" tagType="Anything">
+                    <substitute>HEADER</substitute>
+                </tag>
+                <tag name="bond" tagType="Anything">
+                    <substitute>BOND</substitute>
+                </tag>
+                <tag name="intf" tagType="Anything">
+                    <substitute>INTERFACE</substitute>
+                </tag>
+                <tag name="message" tagType="Anything">
+                    <substitute>BLABLA</substitute>
+                </tag>
+            </tags>
+        </pattern>
+        <pattern name="ip_address">
+            <text>.*IP.*</text>
+            <tags>
+                <tag name="ip" tagType="IP">
+                    <substitute>IP</substitute>
+                </tag>
+            </tags>
+        </pattern>
+    </patterns>
+</normalizer>
