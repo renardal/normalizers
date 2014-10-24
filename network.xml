@@ -14,6 +14,14 @@
     <authors>
         <author>alexandre@cumulusnetworks.com</author>
     </authors>
+    <tagTypes>
+	    <tagType name="INTERFACE" type="basestring">
+		<description>
+		    <localized_desc language="en">Matches a switching interface</localized_desc>
+		</description>
+		<regexp>(swp\d*)|(xe\d*)</regexp>
+	    </tagType>
+    </tagTypes>
     <patterns>
         <pattern name="interface_link_up">
             <text>HEADER bonding: BOND: link status definitely up for interface INTERFACE, BLABLA</text>
