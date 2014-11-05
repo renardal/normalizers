@@ -40,6 +40,23 @@
             </tags>
         </pattern>
 
+        <pattern name="a_ip_link_show_vlan">
+            <text>ID: LINUX_INTERFACE\.VLAN@.*: .*</text>
+            <tags>
+                <tag name="vlan_number" tagType="Integer">
+                    <substitute>VLAN</substitute>
+                </tag>
+
+                <tag name="id_interface" tagType="Integer">
+                    <substitute>ID</substitute>
+                </tag>
+
+                <tag name="linux_interface" tagType="linux_interface">
+                    <substitute>LINUX_INTERFACE</substitute>
+                </tag>
+            </tags>
+        </pattern>
+
         <pattern name="ip_link_show">
             <text>ID: LINUX_INTERFACE: .*</text>
             <tags>
